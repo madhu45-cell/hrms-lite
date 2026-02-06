@@ -1,6 +1,6 @@
 # HRMS Lite (Human Resource Management System - Lite)
 
-[🚀 Open Live App](https://hrms-lit.netlify.app/employees)
+[Open Live App](https://hrms-lit.netlify.app/employees)
 
 ---
 
@@ -50,7 +50,7 @@ The goal of this project is to create a **realistically usable HRMS system**, no
 
 ## Steps to Run the Project Locally
 
-### 1️⃣ Clone the Repositories
+### Clone the Repositories
 ```bash
 git clone https://github.com/madhusudan/hrms-backend.git
 git clone https://github.com/madhusudan/hrms-frontend.git
