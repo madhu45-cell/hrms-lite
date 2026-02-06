@@ -1,5 +1,9 @@
 # HRMS Lite (Human Resource Management System - Lite)
 
+[🚀 Open Live App](https://hrms-lit.netlify.app/employees)
+
+---
+
 ## Project Overview
 **HRMS Lite** is a lightweight Human Resource Management System designed to help small to medium organizations manage employees and attendance efficiently. The application provides:
 
