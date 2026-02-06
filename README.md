@@ -1,6 +1,6 @@
 # HRMS Lite (Human Resource Management System - Lite)
 
-[Open Live App](https://hrms-lit.netlify.app/employees)
+[Open Live App](https://hrms-lit.netlify.app)
 
 ---
 
