@@ -25,7 +25,7 @@ export default function EmployeeForm({ refresh }) {
 
     try {
       await api.post("/employees/", form);
-      setSuccess(" Employee created successfully");
+      setSuccess("Employee created successfully ");
       setForm({
         employee_id: "",
         full_name: "",
@@ -41,69 +41,125 @@ export default function EmployeeForm({ refresh }) {
       } else if (data?.email) {
         setError(data.email[0]);
       } else {
-        setError(" Something went wrong");
+        setError("Something went wrong");
       }
     }
   };
 
   return (
-    <div className="card mb-4">
-      <div className="card-body">
-        <h5 className="card-title mb-3">Add Employee</h5>
+    <div className="container-fluid mb-5">
+      <div
+        className="card border-0 shadow-lg rounded-4"
+        style={{ background: "#ffffff" }}
+      >
+        <div className="card-body p-4">
 
-        <form onSubmit={handleSubmit} className="row g-3">
-          <div className="col-md-3">
-            <input
-              className="form-control"
-              placeholder="Employee ID"
-              name="employee_id"
-              value={form.employee_id}
-              onChange={handleChange}
-              required
-            />
+          {/* Title */}
+          <div className="mb-4">
+            <h4 className="fw-bold text-dark">
+              <i className="bi bi-person-plus-fill me-2 text-primary"></i>
+              Add New Employee
+            </h4>
+            <p className="text-muted small mb-0">
+              Fill in employee details to register in the system.
+            </p>
           </div>
 
-          <div className="col-md-3">
-            <input
-              className="form-control"
-              placeholder="Full Name"
-              name="full_name"
-              value={form.full_name}
-              onChange={handleChange}
-              required
-            />
-          </div>
+          {/* Alerts */}
+          {error && (
+            <div className="alert alert-danger rounded-3 py-2">
+              {error}
+            </div>
+          )}
+          {success && (
+            <div className="alert alert-success rounded-3 py-2">
+              {success}
+            </div>
+          )}
 
-          <div className="col-md-3">
-            <input
-              className="form-control"
-              placeholder="Email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
+          {/* Form */}
+          <form onSubmit={handleSubmit}>
+            <div className="row g-4">
 
-          <div className="col-md-3">
-            <input
-              className="form-control"
-              placeholder="Department"
-              name="department"
-              value={form.department}
-              onChange={handleChange}
-              required
-            />
-          </div>
+              <div className="col-md-6">
+                <label className="form-label fw-semibold">
+                  Employee ID
+                </label>
+                <input
+                  type="text"
+                  className="form-control rounded-3 shadow-sm"
+                  name="employee_id"
+                  value={form.employee_id}
+                  onChange={handleChange}
+                  placeholder="Enter Employee ID"
+                  required
+                />
+              </div>
 
-          <div className="col-12">
-            <button className="btn btn-primary">Add Employee</button>
-          </div>
-        </form>
+              <div className="col-md-6">
+                <label className="form-label fw-semibold">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  className="form-control rounded-3 shadow-sm"
+                  name="full_name"
+                  value={form.full_name}
+                  onChange={handleChange}
+                  placeholder="Enter Full Name"
+                  required
+                />
+              </div>
 
-        {/* Messages (NO UI CHANGE) */}
-        {error && <p className="text-danger mt-3">{error}</p>}
-        {success && <p className="text-success mt-3">{success}</p>}
+              <div className="col-md-6">
+                <label className="form-label fw-semibold">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  className="form-control rounded-3 shadow-sm"
+                  name="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="Enter Email"
+                  required
+                />
+              </div>
+
+              <div className="col-md-6">
+                <label className="form-label fw-semibold">
+                  Department
+                </label>
+                <input
+                  type="text"
+                  className="form-control rounded-3 shadow-sm"
+                  name="department"
+                  value={form.department}
+                  onChange={handleChange}
+                  placeholder="Enter Department"
+                  required
+                />
+              </div>
+
+              {/* Button */}
+              <div className="col-12 mt-3">
+                <button
+                  type="submit"
+                  className="btn w-100 rounded-3 fw-semibold text-white"
+                  style={{
+                    background: "linear-gradient(90deg, #1e3c72, #2a5298)",
+                    padding: "10px",
+                    transition: "0.3s",
+                  }}
+                >
+                  <i className="bi bi-check-circle me-2"></i>
+                  Add Employee
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
