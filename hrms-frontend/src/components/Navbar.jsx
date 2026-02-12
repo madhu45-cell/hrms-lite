@@ -17,20 +17,19 @@ export default function Navbar() {
             HRMS Lite
           </NavLink>
 
-          {/* Toggle Button */}
+          {/* Mobile Toggle */}
           <button
             className="navbar-toggler bg-white"
             type="button"
             data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           {/* Desktop Menu */}
-          <div className="collapse navbar-collapse d-none d-lg-flex">
-            <ul className="navbar-nav ms-auto gap-lg-3">
+          <div className="d-none d-lg-block ms-auto">
+            <ul className="navbar-nav gap-lg-3">
               <NavItem to="/" icon="bi-speedometer2" label="Dashboard" />
               <NavItem to="/employees" icon="bi-person-badge" label="Employees" />
               <NavItem to="/attendance" icon="bi-calendar-check" label="Attendance" />
@@ -40,7 +39,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Right Side Offcanvas Menu */}
+      {/* Offcanvas (Mobile Right Side) */}
       <div
         className="offcanvas offcanvas-end text-bg-dark"
         tabIndex="-1"
@@ -56,7 +55,7 @@ export default function Navbar() {
         </div>
 
         <div className="offcanvas-body">
-          <ul className="navbar-nav justify-content-end flex-grow-1 gap-3">
+          <ul className="navbar-nav gap-3">
             <NavItem to="/" icon="bi-speedometer2" label="Dashboard" />
             <NavItem to="/employees" icon="bi-person-badge" label="Employees" />
             <NavItem to="/attendance" icon="bi-calendar-check" label="Attendance" />
@@ -72,15 +71,15 @@ function NavItem({ to, icon, label }) {
     <li className="nav-item">
       <NavLink
         to={to}
+        end
         className={({ isActive }) =>
-          `nav-link d-flex align-items-center gap-2 px-3 py-2 rounded-3 transition-all
+          `nav-link d-flex align-items-center gap-2 px-3 py-2 rounded-3
           ${
             isActive
               ? "bg-white text-dark fw-semibold shadow-sm"
               : "text-white opacity-75"
           }`
         }
-        style={{ transition: "0.3s ease" }}
         data-bs-dismiss="offcanvas"
       >
         <i className={`bi ${icon}`}></i>
