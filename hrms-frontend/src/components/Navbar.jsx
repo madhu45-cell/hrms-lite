@@ -22,43 +22,43 @@ export default function Navbar() {
             className="navbar-toggler bg-white"
             type="button"
             data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
+            data-bs-target="#mobileMenu"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
 
           {/* Desktop Menu */}
-          <div className="d-none d-lg-block ms-auto">
-            <ul className="navbar-nav gap-lg-3">
-              <NavItem to="/" icon="bi-speedometer2" label="Dashboard" />
-              <NavItem to="/employees" icon="bi-person-badge" label="Employees" />
-              <NavItem to="/attendance" icon="bi-calendar-check" label="Attendance" />
+          <div className="d-none d-lg-flex ms-auto">
+            <ul className="navbar-nav gap-3">
+              <NavItem to="/" label="Dashboard" icon="bi-speedometer2" />
+              <NavItem to="/employees" label="Employees" icon="bi-person-badge" />
+              <NavItem to="/attendance" label="Attendance" icon="bi-calendar-check" />
             </ul>
           </div>
 
         </div>
       </nav>
 
-      {/* Offcanvas (Mobile Right Side) */}
+      {/* Mobile Offcanvas */}
       <div
-        className="offcanvas offcanvas-end text-bg-dark"
+        className="offcanvas offcanvas-end"
         tabIndex="-1"
-        id="offcanvasNavbar"
+        id="mobileMenu"
       >
         <div className="offcanvas-header">
           <h5 className="offcanvas-title">Menu</h5>
           <button
             type="button"
-            className="btn-close btn-close-white"
+            className="btn-close"
             data-bs-dismiss="offcanvas"
           ></button>
         </div>
 
         <div className="offcanvas-body">
           <ul className="navbar-nav gap-3">
-            <NavItem to="/" icon="bi-speedometer2" label="Dashboard" />
-            <NavItem to="/employees" icon="bi-person-badge" label="Employees" />
-            <NavItem to="/attendance" icon="bi-calendar-check" label="Attendance" />
+            <NavItem to="/" label="Dashboard" icon="bi-speedometer2" />
+            <NavItem to="/employees" label="Employees" icon="bi-person-badge" />
+            <NavItem to="/attendance" label="Attendance" icon="bi-calendar-check" />
           </ul>
         </div>
       </div>
@@ -66,18 +66,17 @@ export default function Navbar() {
   );
 }
 
-function NavItem({ to, icon, label }) {
+function NavItem({ to, label, icon }) {
   return (
     <li className="nav-item">
       <NavLink
         to={to}
-        end
+        end={to === "/"}
         className={({ isActive }) =>
-          `nav-link d-flex align-items-center gap-2 px-3 py-2 rounded-3
-          ${
+          `nav-link d-flex align-items-center gap-2 px-3 py-2 rounded-3 ${
             isActive
-              ? "bg-white text-dark fw-semibold shadow-sm"
-              : "text-white opacity-75"
+              ? "bg-primary text-white fw-semibold"
+              : "text-dark"
           }`
         }
         data-bs-dismiss="offcanvas"
