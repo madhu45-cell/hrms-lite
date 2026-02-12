@@ -10,13 +10,13 @@ export default function Navbar() {
     >
       <div className="container-fluid px-4">
         
-        {/* Logo */}
+
         <NavLink className="navbar-brand fw-bold text-white fs-4" to="/">
           <i className="bi bi-people-fill me-2"></i>
           HRMS Lite
         </NavLink>
 
-        {/* Toggle Button (Mobile) */}
+
         <button
           className="navbar-toggler bg-white"
           type="button"
@@ -26,7 +26,7 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Menu Items */}
+
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto gap-lg-3">
 

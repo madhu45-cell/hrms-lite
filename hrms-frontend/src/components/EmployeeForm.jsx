@@ -54,7 +54,7 @@ export default function EmployeeForm({ refresh }) {
       >
         <div className="card-body p-4">
 
-          {/* Title */}
+
           <div className="mb-4">
             <h4 className="fw-bold text-dark">
               <i className="bi bi-person-plus-fill me-2 text-primary"></i>
@@ -65,7 +65,7 @@ export default function EmployeeForm({ refresh }) {
             </p>
           </div>
 
-          {/* Alerts */}
+
           {error && (
             <div className="alert alert-danger rounded-3 py-2">
               {error}
@@ -77,7 +77,7 @@ export default function EmployeeForm({ refresh }) {
             </div>
           )}
 
-          {/* Form */}
+
           <form onSubmit={handleSubmit}>
             <div className="row g-4">
 
@@ -141,7 +141,7 @@ export default function EmployeeForm({ refresh }) {
                 />
               </div>
 
-              {/* Button */}
+
               <div className="col-12 mt-3">
                 <button
                   type="submit"

@@ -29,7 +29,7 @@ export default function AttendanceForm({ refresh }) {
     <div className="card shadow-lg border-0 rounded-4 mb-4">
       <div className="card-body p-4">
 
-        {/* Header */}
+
         <div className="mb-4">
           <h4 className="fw-bold">
             <i className="bi bi-calendar-check-fill text-primary me-2"></i>
@@ -42,7 +42,7 @@ export default function AttendanceForm({ refresh }) {
 
         <form className="row g-4" onSubmit={handleSubmit}>
 
-          {/* Employee Select */}
+
           <div className="col-md-4">
             <label className="form-label fw-semibold">
               Employee
@@ -63,7 +63,7 @@ export default function AttendanceForm({ refresh }) {
             </select>
           </div>
 
-          {/* Date */}
+
           <div className="col-md-4">
             <label className="form-label fw-semibold">
               Date
@@ -78,7 +78,7 @@ export default function AttendanceForm({ refresh }) {
             />
           </div>
 
-          {/* Status */}
+
           <div className="col-md-2">
             <label className="form-label fw-semibold">
               Status
@@ -94,7 +94,7 @@ export default function AttendanceForm({ refresh }) {
             </select>
           </div>
 
-          {/* Button */}
+
           <div className="col-md-2 d-flex align-items-end">
             <button
               type="submit"

@@ -28,7 +28,7 @@ export default function Dashboard() {
         (a) => a.date === today
       );
 
-      // ================= TODAY SUMMARY =================
+
       setStats({
         employees: employees.length,
         present: todayAttendance.filter(
@@ -39,7 +39,7 @@ export default function Dashboard() {
         ).length,
       });
 
-      // ================= TOTAL PRESENT + ABSENT PER EMPLOYEE =================
+
       const presentCountMap = {};
       const absentCountMap = {};
 
@@ -75,7 +75,7 @@ export default function Dashboard() {
   return (
     <div className="container-fluid">
 
-      {/* ================= SUMMARY CARDS ================= */}
+
       <div className="row g-4 mb-4">
         <StatCard
           title="Total Employees"
@@ -97,7 +97,7 @@ export default function Dashboard() {
         />
       </div>
 
-      {/* ================= ATTENDANCE SUMMARY TABLE ================= */}
+
       <div className="card shadow-lg border-0 rounded-4">
         <div className="card-body">
 
@@ -148,7 +148,7 @@ export default function Dashboard() {
   );
 }
 
-/* ================= REUSABLE CARD ================= */
+
 
 function StatCard({ title, value, color, icon }) {
   return (

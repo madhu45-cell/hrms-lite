@@ -36,7 +36,7 @@ export default function Attendance() {
     setLoading(false);
   };
 
-  // ===== SUMMARY CALCULATION =====
+
   const totalPresent = records.filter(
     (r) => r.status === "Present"
   ).length;
@@ -48,10 +48,10 @@ export default function Attendance() {
   return (
     <div className="container-fluid">
 
-      {/* ================= ADD ATTENDANCE ================= */}
+
       <AttendanceForm refresh={fetchAttendance} />
 
-      {/* ================= VIEW ATTENDANCE CARD ================= */}
+
       <div className="card shadow-lg border-0 rounded-4 mb-4">
         <div className="card-body">
 
@@ -64,7 +64,7 @@ export default function Attendance() {
 
           <div className="row g-3">
 
-            {/* Employee Select */}
+
             <div className="col-md-4">
               <label className="form-label fw-medium">
                 Select Employee
@@ -83,7 +83,7 @@ export default function Attendance() {
               </select>
             </div>
 
-            {/* From Date */}
+
             <div className="col-md-3">
               <label className="form-label fw-medium">From Date</label>
               <input
@@ -94,7 +94,7 @@ export default function Attendance() {
               />
             </div>
 
-            {/* To Date */}
+
             <div className="col-md-3">
               <label className="form-label fw-medium">To Date</label>
               <input
@@ -105,7 +105,7 @@ export default function Attendance() {
               />
             </div>
 
-            {/* Filter Button */}
+
             <div className="col-md-2 d-flex align-items-end">
               <button
                 className="btn btn-primary w-100"
@@ -119,10 +119,10 @@ export default function Attendance() {
         </div>
       </div>
 
-      {/* ================= LOADER ================= */}
+
       {loading && <Loader />}
 
-      {/* ================= SUMMARY CARDS ================= */}
+
       {!loading && records.length > 0 && (
         <div className="row g-4 mb-4">
 
@@ -150,7 +150,7 @@ export default function Attendance() {
         </div>
       )}
 
-      {/* ================= TABLE ================= */}
+
       {!loading && records.length > 0 && (
         <div className="card shadow-sm border-0 rounded-4">
           <div className="card-body">
@@ -159,7 +159,7 @@ export default function Attendance() {
         </div>
       )}
 
-      {/* ================= EMPTY STATE ================= */}
+
       {!loading && hasSearched && records.length === 0 && (
         <div className="alert alert-info text-center shadow-sm">
           No attendance records found for selected criteria.
@@ -169,7 +169,7 @@ export default function Attendance() {
   );
 }
 
-/* ================= REUSABLE SUMMARY CARD ================= */
+
 
 function SummaryCard({ title, value, color, icon }) {
   return (

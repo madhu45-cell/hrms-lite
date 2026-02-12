@@ -8,11 +8,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="min-vh-100 bg-light">
-        
-        {/* Top Navbar */}
+      
         <Navbar />
-
-        {/* Main Content Area */}
         <div className="container py-4">
           <Routes>
             <Route path="/" element={<Dashboard />} />
