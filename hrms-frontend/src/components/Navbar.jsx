@@ -9,7 +9,7 @@ export default function Navbar() {
       }}
     >
       <div className="container-fluid px-4">
-        
+
 
         <NavLink className="navbar-brand fw-bold text-white fs-4" to="/">
           <i className="bi bi-people-fill me-2"></i>
@@ -22,9 +22,13 @@ export default function Navbar() {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
 
 
         <div className="collapse navbar-collapse" id="navbarNav">
@@ -48,10 +52,9 @@ function NavItem({ to, icon, label }) {
         to={to}
         className={({ isActive }) =>
           `nav-link d-flex align-items-center gap-2 px-3 py-2 rounded-3 transition-all
-          ${
-            isActive
-              ? "bg-white text-dark fw-semibold shadow-sm"
-              : "text-white opacity-75"
+          ${isActive
+            ? "bg-white text-dark fw-semibold shadow-sm"
+            : "text-white opacity-75"
           }`
         }
         style={{ transition: "0.3s ease" }}
